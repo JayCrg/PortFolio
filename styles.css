@@ -1,0 +1,522 @@
+/*1rem + 2vw*/
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+:root {
+    font-size: 62.5%;
+      /*paleta de colores*/
+    /*declaramos variables*/
+    /*pq es más fácil su modificación o mantenimiento*/
+    --primary-color:#014d4e;
+    /* Secondary Color */
+    --secondary-color:#ff9408;
+    --terciary-color: #017374;
+    --second-modified: #ff94088e;
+    --terciary-modified: #69aaac;
+    font-family: Roboto, sans-serif;
+}
+body{
+    display: flex;
+    color :white;
+    background-color: var(--primary-color);
+}
+h1,h2{
+    color: var(--secondary-color);
+    font-size: 4rem;
+    text-align: center;
+    margin-top: 2rem;
+    margin-bottom: 3.5rem;
+}
+h2{font-size: 3rem;}
+
+/*TRABAJMOS EN EL ASIDE */
+/*Colocamos el aside al lado*/
+aside{
+    position: fixed;
+    width: 5vw;
+    height: 100vh;
+    background-color: #69aaac;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+	}
+aside ul li{
+    list-style: none;
+    margin: 1rem 0;
+    justify-content: space-between;
+}
+aside ul li img{
+    width: 4rem;
+    height: 4rem;
+}
+aside ul li img:hover{
+    border-radius: 50%;
+    transform: scale(1.2);
+    transition: all 0.5s ease;
+    background-color: var(--second-modified);
+}
+aside ul li img:first-of-type:hover{
+    border-radius: 30%;
+
+}
+
+
+
+
+/*TRABAJAMOS EN EL HEADER*/
+/*Colocamos el main al lado*/
+main{
+    background-color: var(--primary-color);
+    width: 95vw;
+    margin-left: 5vw;
+}
+
+/*Arreglamos el header*/
+header{
+    display: flex;
+    width: 100%;
+    height: 10vh;
+    flex-flow: row wrap;
+    justify-content: space-between;
+    background-color: black;
+}
+header div{
+    width: 6vw;
+    height: 10vh;
+}
+
+header div img{
+    width: inherit;
+    height: inherit;
+}
+/***********Estilo del menu*/
+nav{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+nav ul{
+    list-style: none; 
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+nav ul a{
+    font-weight: bold;
+    color: var(--primary-color);
+    align-content: center;
+    font-size: 1.75rem;
+    text-decoration: none;
+    position: relative;
+    padding: 2vh;
+}
+/*cambio de color al pasar el raton*/
+nav ul a:hover{
+    color: var(--secondary-color);
+    transition: all 0.5s ease;
+}
+
+/*Le damos animacion a cada boton*/
+/*pseudoelementos after y before*/
+nav ul a:link::after,
+nav ul a:visited::after,
+nav ul a:link::before,
+nav ul a:visited::before{
+   /*creli el contenido sin nada*/
+    content: "";
+  /*lo posiciono respecto a su padre nav div a*/
+    position: absolute;
+    left: 0;
+  /*lo dimensiono, */
+    width: 100%;/*ancho=ancho de su padre*/
+    height: 0.25rem;/*alto->grosor de una líena*/
+    background-color: var(--secondary-color);
+
+    transform: scaleX(0); /*en principio no es visible*/
+
+    transition: transform 0.6s ease-in-out;
+}
+/*hacemos la transformación*/
+/*diferenciamos entre after y before para que se pinte de forma diferente*/
+nav ul a:link::after,
+nav ul a:visited::after{
+    top: 0%;
+/* Transform-origen es center por defecto */
+    transform-origin: left;/* para que empiece a dibujarse desde la izquierda*/
+}
+
+nav ul a:link::before,
+nav ul a:visited::before{
+    bottom: 0%;
+    transform-origin: right;
+}
+
+/*cuando aparece hover lo hacemos visible*/
+
+nav ul a:hover::after,
+nav ul a:hover::before{
+    transform:scaleX(1);
+}
+
+
+
+/*TRABAJAMOS EN EL RESTO DEL CUERPO */
+/**************************/
+/*TRABAJAMOS EN EL HOME*/
+#home{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 5rem ;
+}
+#home p{
+    color: var(--secondary-color);
+    font-size: 5rem;
+    margin: 2rem 0;
+}
+#home img{
+    border-radius: 10%;
+    margin-bottom: 2rem;
+}
+
+
+
+
+/*********************/
+/*TRABAJAMOS EN EL about*/
+#about{
+
+    display:flex;
+    flex-direction: column;
+    background-color: var(--primary-color);
+    width: 100%;
+    height: 100vh;
+    justify-content: center;
+}
+#about > div{
+    display: flex;
+    align-self: center;
+}
+#about > div > div{
+    width: 75%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+/*Rota la imagen*/
+#rotacion {
+        width: 35rem;
+        height: 25rem;
+        border-radius: 15%;
+        transform: translate(0) rotate(0deg);
+        animation: rotate 1s linear;
+        margin-left: 40px;
+        }
+
+    @keyframes rotate{
+        
+        0%{
+            transform: translateX(100rem) scale(0.5) rotate(360deg);
+        }
+        100%{
+            transform: translateX(0) scale(1);
+        }  
+    }
+/*Fade in del texto*/
+#about p{
+    margin-left: 2rem;
+    margin-right: 2rem;;
+    font-size: 1.2rem;
+    opacity: 0;
+    animation: fade 1s 1s forwards;
+        font-size:3rem;
+    color: white;
+}
+@keyframes fade{
+    0%{
+        opacity: 0;
+    }
+    100%{
+        opacity: 1;
+    }
+}
+
+
+
+/*************************/
+    /*TRABAJAMOS EN SKILLS*/
+    #skills{
+        height: 120vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+    }
+    #skills a{
+        text-decoration: none;
+        color: white;
+    }
+    #skills > div{
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        gap: calc(50% - 50rem);
+    }
+    #column1, #column2{
+        flex-basis: 35rem;
+        margin-bottom: 3rem;
+    
+    }
+    /*Para que haya una discontinuidad entre las columnas como mínimo*/
+    #column1{
+        margin-right:1rem;
+    }
+    
+    #skills img{
+        width: 7rem;
+        height: 7rem;
+        margin-left: 2rem;
+    }
+    .titulo-skills:hover{
+        transform: scale(1.07);
+        transition: all 0.4s ease;
+        border-radius: 50%;
+        background-color: var(--terciary-modified);
+    }
+    
+    #skills h4{
+        font-size: 2rem;
+        margin-bottom: 2rem;
+    }
+    .titulo-skills{
+        display: flex;
+        flex-direction: row;
+        align-items: flex-end;    
+        justify-content: center;
+        margin-top: 5rem;
+    }
+    
+    .skills{
+        height: 2rem;
+        border-radius: 2rem;
+        margin-bottom: 1rem;
+        padding-bottom: 2rem;
+        background-color: var(--secondary-color);
+        color: black;
+        align-content: center;
+        font-size: 2rem;
+        font-weight: 400;
+        text-align: center;
+        justify-self: center;
+    }
+    .progress-bar{
+        height: 20px;
+        background-color: #ccc;
+        position: relative;
+        border-radius: 10px;
+        margin-top: 1rem;
+      }
+    
+    /*Estilos de la barra de progreso*/
+    #html--animation{
+          width: 85%;  
+          animation: progressbarHTML 2s ease-in-out;
+    }
+    #css--animation{
+        width: 50%;
+        animation: progressbarCSS 2s ease-in-out;
+    }
+    #js--animation{
+        width: 90%;
+        animation: progressbarJS 2s ease-in-out;
+    }
+    #php--animation{
+        width: 80%;
+        animation: progressbarPHP 2s ease-in-out;
+    }
+    #linux--animation{
+        width: 60%;
+        animation: progressbarLINUX 2s ease-in-out;
+    }
+    #python--animation{
+        width: 90%;
+        animation: progressbarPYTHON 2s ease-in-out;
+    }
+    #c--animation{
+        width: 70%;
+        animation: progressbarC 2s ease-in-out;
+    }
+    #sql--animation{
+        width: 90%;
+        animation: progressbarSQL 2s ease-in-out;
+    }
+    
+    
+    @keyframes progressbarHTML {
+        0% {
+          width: 0%;
+        }
+        100% {
+          width: 85%;
+        }
+      }
+        @keyframes progressbarCSS {
+            0% {
+            width: 0%;
+            }
+            100% {
+            width: 50%;
+            }
+        }
+        @keyframes progressbarJS {
+            0% {
+            width: 0%;
+            }
+            100% {
+            width: 90%;
+            }
+        }
+        @keyframes progressbarPHP {
+            0% {
+            width: 0%;
+            }
+            100% {
+            width: 80%;
+            }
+        }
+        @keyframes progressbarLINUX {
+            0% {
+            width: 0%;
+            }
+            100% {
+            width: 60%;
+            }
+        }
+        @keyframes progressbarPYTHON {
+            0% {
+            width: 0%;
+            }
+            100% {
+            width: 90%;
+            }
+        }
+        @keyframes progressbarC {
+            0% {
+            width: 0%;
+            }
+            100% {
+            width: 70%;
+            }
+        }
+        @keyframes progressbarSQL {
+            0% {
+            width: 0%;
+            }
+            100% {
+            width: 90%;
+            }
+        }
+
+
+
+
+/***************************/
+/*TRABAJAMOS EN LOS PROJECTS*/
+#home{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 5rem;
+    height: 110vh;
+}
+
+
+#project{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    margin-top: 5rem;
+}
+#project > div{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+}
+/*Estilos de la imagenes de los proyectos*/
+#project img{
+    width: 30rem;
+    height: 20rem;
+    margin: 2rem;
+    border-radius: 10%;
+}
+#project img:hover{
+    transform: scale(1.1);
+    transition: all 0.5s ease;
+    background-color: var(--second-modified);
+}
+#project >div>div{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 2rem;
+}
+#project h3{
+    font-size: 2rem;
+    margin-bottom: 2rem;
+}
+
+
+
+
+/***************************/
+/*TRABAJAMOS EN LOS SERVICIOS*/
+#services{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    margin-top: 5rem;
+
+}
+#services > div{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+}
+#services > div div{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 2rem;
+    width: 30rem;
+}
+i{
+    margin-left:1rem
+}
+#services h3{
+    display: flex;
+    font-size: 2rem;
+    margin-bottom: 2rem;
+    /* justify-items: center; */
+    align-items: center;
+}
+#services p{
+    font-size: 1.5rem;
+    margin-bottom: 2rem;
+    text-align: center;
+}
