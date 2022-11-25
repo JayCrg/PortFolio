@@ -13,6 +13,7 @@
     --primary-color:#014d4e;
     /* Secondary Color */
     --secondary-color:#ff9408;
+    --secondary-color-light:#ff940899;
     --terciary-color: #017374;
     --second-modified: #ff94088e;
     --terciary-modified: #69aaac;
@@ -108,7 +109,8 @@ nav ul{
 }
 nav ul a{
     font-weight: bold;
-    color: var(--primary-color);
+    /* color: var(--primary-color); */
+    color: beige;
     align-content: center;
     font-size: 1.75rem;
     text-decoration: none;
@@ -174,6 +176,8 @@ nav ul a:hover::before{
     align-items: center;
     justify-content: center;
     margin-top: 5rem ;
+    height: 110vh;
+
 }
 #home p{
     color: var(--secondary-color);
@@ -429,16 +433,6 @@ nav ul a:hover::before{
 
 /***************************/
 /*TRABAJAMOS EN LOS PROJECTS*/
-#home{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    margin-top: 5rem;
-    height: 110vh;
-}
-
-
 #project{
     display: flex;
     flex-direction: column;
@@ -464,6 +458,7 @@ nav ul a:hover::before{
     transform: scale(1.1);
     transition: all 0.5s ease;
     background-color: var(--second-modified);
+    box-shadow: 0 0 5px 5px var(--terciary-modified);
 }
 #project >div>div{
     display: flex;
@@ -501,9 +496,10 @@ nav ul a:hover::before{
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
+    justify-content: flex-start;
     margin: 2rem;
     width: 30rem;
+    height: 20rem;
 }
 i{
     margin-left:1rem
@@ -519,4 +515,65 @@ i{
     font-size: 1.5rem;
     margin-bottom: 2rem;
     text-align: center;
+}
+
+
+
+/***************************/
+/*TRABAJAMOS EN LOS TESTIMONIOS*/
+#hire{
+    width: 100%;
+    height: 120vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+#hire > div{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    gap: 2rem;
+
+}
+
+#hire .card{
+    position: relative;
+    width: fit-content;
+    height: fit-content;
+    color: white;
+}
+
+#hire img{
+    width: 50rem;
+    transform: scale(1);
+    transition: transform .2s ease-in-out;
+    border-radius: 5%;
+    border:var(--terciary-modified) 2px solid;
+
+}
+
+#hire .card--info{
+    border: 1px solid white;
+    color: black;
+    position: absolute;
+    bottom: calc(5% + 1rem);
+    left: calc(10% - 5rem);
+    width: calc(100% - 10%);
+    padding: 7px;
+    background-color: var(--secondary-color-light);
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform .2s ease-in-out;
+}
+
+#hire img:hover{
+    transform: scale(0.9);
+}
+
+#hire img:hover ~ .card--info{
+    transform: scaleX(1);
 }
