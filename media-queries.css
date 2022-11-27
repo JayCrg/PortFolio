@@ -25,7 +25,6 @@
     /*HOME*/
     #home img{
         width: 70%;
-        height: 40%;
     }
 
     /******************/
@@ -141,38 +140,37 @@
         
         height: 2em;
         width: 2.5em;
-        
         position: absolute;
-        top: 0.5em;
-        right: 0px;
+        top: 2.5rem;
+        right: 2.5rem;
         
         display: flex;
         flex-direction: column;
         justify-content: space-between;
         
         padding: 2rem;
-        border-radius: 50%;
     }
     
     .hamburger-lines .line {
         height: 0.2em;
-        width: 100%;
-        border-radius: 10px;
-        background-color: white;
+        width: 1rem
     }
     
     .hamburger-lines .line1 {
         transform-origin: 0% 0%;
         transition: transform 0.4s ease-in-out;
+        background-color: white;
     }
     
     .hamburger-lines .line2 {
         transition: transform 0.2s ease-in-out;
+        background-color: white;
     }
     
     .hamburger-lines .line3 {
         transform-origin: 0% 100%;
         transition: transform 0.4s ease-in-out;
+        background-color: white;
     }
     
     /* Aqui hacemos la animacion de transformar la hamburguesa en una X.
@@ -206,9 +204,29 @@
         flex-direction: column;
         align-items: center;
     }
+
+    /*******************************/
+    /*HIRE*/
+    #hire >div div{
+        width: 90%;
+    }
+    #hire img{
+        width: 100%;
+    }
+    #hire .card--info{
+        width: 90%;
+        font-size: 1.5rem;
+    }
+
 }
 
 
 @media screen and (max-width: 460px) {
+    #hire .card--info p{
+        font-size: 1.6rem;
+    }
+    #hire .card--info h3{
+        font-size: 2rem;
+    }
     
 }

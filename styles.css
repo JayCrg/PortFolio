@@ -193,9 +193,7 @@ nav ul a:hover::before {
 
 .checkbtn{
     font-size: 2rem;
-    /* margin-right: 8rem; */
     cursor: pointer;
-    line-height: 3.8em;
 }
 
 
@@ -253,12 +251,13 @@ nav ul a:hover::before {
     height: 25rem;
     border-radius: 15%;
     transform: translate(0) rotate(0deg);
-    animation: rotate 1s linear;
     margin-left: 40px;
+}
+.rotando{
+    animation: rotate 1s linear;
 }
 
 @keyframes rotate {
-
     0% {
         transform: translateX(100rem) scale(0.5) rotate(360deg);
     }
@@ -269,15 +268,18 @@ nav ul a:hover::before {
 }
 
 /*Fade in del texto*/
-#about p {
+#presentacion {
     margin-left: 2rem;
     margin-right: 2rem;
     ;
     font-size: 1.2rem;
     opacity: 0;
-    animation: fade 1s 1s forwards;
     font-size: 3rem;
     color: white;
+}
+
+.faded{
+    animation: fade 1s 1s forwards;
 }
 
 @keyframes fade {
@@ -312,7 +314,6 @@ nav ul a:hover::before {
     align-items: center;
     justify-content: center;
     gap: calc(50% - 50rem);
-    margin-top: -5rem;
 }
 
 #column1,
@@ -377,42 +378,42 @@ nav ul a:hover::before {
 }
 
 /*Estilos de la barra de progreso*/
-#html--animation {
+.html-animated {
     width: 85%;
     animation: progressbarHTML 2s ease-in-out;
 }
 
-#css--animation {
+.css-animated {
     width: 50%;
     animation: progressbarCSS 2s ease-in-out;
 }
 
-#js--animation {
+.js-animated {
     width: 90%;
     animation: progressbarJS 2s ease-in-out;
 }
 
-#php--animation {
+.php-animated {
     width: 80%;
     animation: progressbarPHP 2s ease-in-out;
 }
 
-#linux--animation {
+.linux-animated {
     width: 60%;
     animation: progressbarLINUX 2s ease-in-out;
 }
 
-#python--animation {
+.python-animated {
     width: 90%;
     animation: progressbarPYTHON 2s ease-in-out;
 }
 
-#c--animation {
+.c-animated {
     width: 70%;
     animation: progressbarC 2s ease-in-out;
 }
 
-#sql--animation {
+.sql-animated {
     width: 90%;
     animation: progressbarSQL 2s ease-in-out;
 }
@@ -648,7 +649,6 @@ i {
 
 #hire img {
     width: 47rem;
-    transform: scale(1);
     transition: transform .2s ease-in-out;
     border-radius: 5%;
     border: var(--terciary-modified) 2px solid;
