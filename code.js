@@ -81,9 +81,9 @@ $(window).scroll(function () {
 
   if(isScrolledIntoView($('#rotacion'))) {
     $('#rotacion').addClass('rotando');
-  }
-
-  if(isScrolledIntoView($('#presentacion'))) {
     $('#presentacion').addClass('faded');
   }
+
+
+
 });
