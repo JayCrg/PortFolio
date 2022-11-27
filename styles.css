@@ -312,6 +312,7 @@ nav ul a:hover::before {
     align-items: center;
     justify-content: center;
     gap: calc(50% - 50rem);
+    margin-top: -5rem;
 }
 
 #column1,

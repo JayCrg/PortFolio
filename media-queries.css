@@ -99,7 +99,7 @@
         align-self: flex-start;
     }
 
-    
+    /***************Boton hamburguesa***************/
     .checkbtn{
         display: block;
     }
@@ -113,10 +113,10 @@
         flex-direction: column;
         justify-content: center;
         position: fixed;
-        width: 100vw;
-        height: 100vh;
-        background-color: var(--primary-color);
-        top: 4em;
+        width: 80vw;
+        height: 90vh;
+        background-color: var(--terciary-modified);
+        top: 13vh;
         left: -200%;
         text-align: center;
         transition: all 0.5s;
@@ -129,12 +129,12 @@
     nav ul a{
         display: block;
         padding: 1rem;
-        line-height: 1.875em;
+        color: black
     }
     
     nav ul a:hover, nav ul a:active{
         font-size: 1.5em;
-        padding: 0.5rem 10rem;
+        padding: 1rem 10rem;
     }
     
     .hamburger-lines {
@@ -189,12 +189,22 @@
     .open .line3 {
         transform: rotate(-47deg);
     }
-    
+
     /******************/
     /*HOME*/
     #home img{
         width: 70%;
         height: 30%;
+    }
+    /********************************/
+    /*SKILLS*/
+    #skills{
+        height: 200vh;
+    }
+    #skills>div{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
     }
 }
 
