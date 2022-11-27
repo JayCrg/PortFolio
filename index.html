@@ -9,6 +9,7 @@
     <link rel="icon" type="image/x-icon" href="./imagenesProyecto1/JC-Logo-Profile.png">
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="animations.css">
+    <link rel="stylesheet" href="media-queries.css">
     <script src="https://kit.fontawesome.com/bfe47c94ff.js" crossorigin="anonymous"></script>
     <script src="code.js"></script>
 </head>
@@ -27,6 +28,7 @@
         <header id="header">
             <div>
                 <img src="./imagenesProyecto1/JC-logo2.png" alt="Logo JC">
+                <h1>Juan.C</h1>
             </div>
             <nav>
                 <div class="checkbtn">
@@ -48,8 +50,10 @@
             </nav>
         </header>
         <section id="home">
-            <h1>Hi, I'm Juan Carlos</h1>
-            <h2>Full Stack Developer</h2>
+            <div>
+                <h1>Hello there, I'm Juan Carlos</h1>
+                <h2>Full Stack Developer</h2>
+            </div>
             <img src="./imagenesProyecto1/fullStack.png" alt="img-FullStack">
         </section>
         <section id="about">
@@ -267,9 +271,20 @@
                 </div>
             </div>
         </section>
-        <section id="contacto"></section>
+        <section id="contacto">
+            <h2>Contact</h2>
+            <div>
+                    <label for="name">Your Name</label>
+                    <input type="text" name="name" required/>
+                    <label for="email">Your Email</label>
+                    <input type="email" name="email" placeholder="myemail9@example.example(.es)" required pattern="[a-zA-Z0-9!#$%&'*\/=?^_`{|}~+-]([\.]?[a-zA-Z0-9!#$%&'*\/=?^_`{|}~+-])+@[a-zA-Z0-9]([^@&%$/()=?¿!.,:;]|\d)+[a-zA-Z0-9][\.][a-zA-Z]{2,6}([\.][a-zA-Z]{2})?"/>
+                    <label for="subject">Subject</label>
+                    <input type="text" name="subject" required/>
+                    <label for="message">Your Message</label>
+                    <textarea name="message" id="" cols="30" rows="10" placeholder="What's the matter?"></textarea>
+                    <button>Submit</button>
+            </div>
+        </section>
     </main>
-
 </body>
-
 </html>
